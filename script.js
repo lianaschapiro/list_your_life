@@ -7,12 +7,22 @@ $(document).ready(function() {
 
     	$("#itemDescription").val("");
 
-		$('li').on('click', function(){
-		    $(this).toggleClass('complete');
-		});
+		
+		
 
-		$('li').on('dblclick', function(){
-		    $(this).remove();
+		$('li').bind('dblclick', function(){
+			// var complete = confirm("Are you sure you want to remove this item?");
+		 //    if (complete == true){
+		 //    	return false;
+		 //    } else {
+		    	$(this).remove();
+		    // }
+
 		});
     });
+
+    $('ul').on('click', 'li', function(){
+	    $(this).toggleClass('complete');
+	
+	});
 });
